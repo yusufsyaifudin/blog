@@ -56,7 +56,7 @@ Supposed you have 16 line of log above, repeated multiple times because of high 
 
 The default Rails log output is hard to debug. I think it is not only me who feel that. Even ChatGPT tell me this when I asked **why rails app log hard to debug**:
 
-![Figure 1. ChatGPT's opinion of Rails log outputs](/post-assets/2023-02-24/chatgpt-why-rails-app-log-hard-to-debug.png)
+![Figure 1. ChatGPT's opinion of Rails log outputs](/blog/post-assets/2023-02-24/chatgpt-why-rails-app-log-hard-to-debug.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 1. ChatGPT's opinion of Rails log outputs</div>
 
 ---
@@ -92,7 +92,7 @@ OpenTelemetry came as a set of standard to make developer (and also ops) easier 
 
 
 
-![Figure 2. OpenTelemetry Ruby SDK Page](/post-assets/2023-02-24/opentelemetry-ruby-sdk-page.png)
+![Figure 2. OpenTelemetry Ruby SDK Page](/blog/post-assets/2023-02-24/opentelemetry-ruby-sdk-page.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 2. OpenTelemetry Ruby SDK Page</div>
 
 So, as the workaround to make standard logging that can be linked to the trace, we need to implement the [OTEP0114](https://github.com/open-telemetry/oteps/pull/114) which add these property in our existing log output:
@@ -111,7 +111,7 @@ So, as the workaround to make standard logging that can be linked to the trace, 
 
 In the OpenTelemetry page discussing [Trace Context in Legacy Formats](https://github.com/open-telemetry/opentelemetry-specification/blob/v1.18.0/specification/logs/README.md?plain=1#L474-L526), there no advice to use JSON format over the [Syslog RFC5424](https://www.rfc-editor.org/rfc/rfc5424) or other format. But in my opinion, using JSON as the log format output will make debugging more easier because it can be stored into NoSQL database and then query it. In result, by able to query the logs, we can group the logs based on `trace_id` which means that all logs with the same `trace_id` are produced by the one request journey from the client.
 
-![Figure 3. Trace Context in Legacy Formats](/post-assets/2023-02-24/opentelemetry-trace-context-in-legacy-format.png)
+![Figure 3. Trace Context in Legacy Formats](/blog/post-assets/2023-02-24/opentelemetry-trace-context-in-legacy-format.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 3. Trace Context in Legacy Formats</div>
 
 # Part 1: Preparing the Ruby on Rails Application

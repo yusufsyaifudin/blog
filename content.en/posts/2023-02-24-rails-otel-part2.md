@@ -226,7 +226,7 @@ default ✓ [======================================] 1 VUs  00m00.9s/10m0s  1/1 
 ```
 
 
-![Figure 1. Run Simple K6 Command](/post-assets/2023-02-24/k6-run-once-request.png)
+![Figure 1. Run Simple K6 Command](/blog/post-assets/2023-02-24/k6-run-once-request.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 1. Run Simple K6 Command</div>
 
 And the Rails log output will look like this:
@@ -252,7 +252,7 @@ myapp  |
 myapp  |
 ```
 
-![Figure 2. Rails Logging Output With One Request](/post-assets/2023-02-24/rails-app-log-one-request.png)
+![Figure 2. Rails Logging Output With One Request](/blog/post-assets/2023-02-24/rails-app-log-one-request.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 2. Rails Logging Output With One Request</div>
 
 At this point, we already have a working Rails app that show the default log output format. In the next section, I will show you what we can improve with the log output.
@@ -281,12 +281,12 @@ This number may different each time you run the `k6` load testing, it depends on
 iterations.....................: 164     14.951436/s
 ```
 
-![Figure 3. K6 Output With 100VUs for 10s](/post-assets/2023-02-24/k6-run-100vus.png)
+![Figure 3. K6 Output With 100VUs for 10s](/blog/post-assets/2023-02-24/k6-run-100vus.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 3. K6 Output With 100VUs for 10s</div>
 
 In Figure 4 below, we can see that the Rails logger now is harder to read.
 
-![Figure 4. Rails Log Output Become Hard To Read](/post-assets/2023-02-24/rails-logs-become-hard-to-read.png)
+![Figure 4. Rails Log Output Become Hard To Read](/blog/post-assets/2023-02-24/rails-logs-become-hard-to-read.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 4. Rails Log Output Become Hard To Read</div>
 
 <details>
@@ -484,7 +484,7 @@ docker compose up --build --force-recreate
 
 Voilà, you'll see that now our log become structured JSON.
 
-![Figure 5. Rails now produces JSON on booting](/post-assets/2023-02-24/rails-json-log-on-boot.png)
+![Figure 5. Rails now produces JSON on booting](/blog/post-assets/2023-02-24/rails-json-log-on-boot.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 5. Rails now produces JSON on booting</div>
 
 
@@ -741,7 +741,7 @@ docker compose up --build --force-recreate
 
 We will see the log like this:
 
-![Figure 6. Rails Logger After Installing OpenTelemetry SDK](/post-assets/2023-02-24/rails-log-after-install-otel-sdk.png)
+![Figure 6. Rails Logger After Installing OpenTelemetry SDK](/blog/post-assets/2023-02-24/rails-log-after-install-otel-sdk.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 6. Rails Logger After Installing OpenTelemetry SDK</div>
 
 <details>
@@ -1010,7 +1010,7 @@ require_relative "logger_active_record_json"
 
 Restart the server and now access our endpoint [http://localhost:3000/list-vouchers?token={your-token}](http://localhost:3000/list-vouchers?token={your-token}). Now, our log must show all log in JSON format output:
 
-![Figure 7. Rails Logger After Duck-Typing ActiveRecord::Logger](/post-assets/2023-02-24/rails-log-after-duck-typing-activerecord-logger.png)
+![Figure 7. Rails Logger After Duck-Typing ActiveRecord::Logger](/blog/post-assets/2023-02-24/rails-log-after-duck-typing-activerecord-logger.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 7. Rails Logger After Duck-Typing ActiveRecord::Logger</div>
 
 <details>
@@ -1114,7 +1114,7 @@ Now, as we already add the Jaeger service in the section [Add OpenTelemetry SDK]
 
 And we will see one trace like this (because we only do request once only):
 
-![Figure 8. JaegerUI To See App Trace](/post-assets/2023-02-24/jaegerui-after-duck-typing-activerecord-logger.png)
+![Figure 8. JaegerUI To See App Trace](/blog/post-assets/2023-02-24/jaegerui-after-duck-typing-activerecord-logger.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 8. JaegerUI To See App Trace</div>
 
 In our log we see that we have a trace id **4862c816e54cf50f3d0147068a88ccc7** and, it match with the Trace ID shown in JaegerUI in [http://localhost:16686/trace/4862c816e54cf50f3d0147068a88ccc7](http://localhost:16686/trace/4862c816e54cf50f3d0147068a88ccc7).
@@ -1299,7 +1299,7 @@ Again, restart the application and make some requests. To validate that we alrea
 curl -v http://localhost:3000/list-vouchers?token={your-token}
 ```
 
-![Figure 9. cURL To Validate Traceparent Header](/post-assets/2023-02-24/curl-to-validate-traceparent-header-response.png)
+![Figure 9. cURL To Validate Traceparent Header](/blog/post-assets/2023-02-24/curl-to-validate-traceparent-header-response.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 9. cURL To Validate Traceparent Header</div>
 
 <details>
@@ -1341,7 +1341,7 @@ curl -v http://localhost:3000/list-vouchers\?token\=eyJhbGciOiJIUzI1NiJ9.eyJ1c2V
 
 Also, in the application log, we will see access log with JSON format (Figure 10). We produce request-response data inside field `data` in the log.
 
-![Figure 10. Application Log After Adding OpenTelemetry Middleware](/post-assets/2023-02-24/rails-log-after-installing-otel-middleware.png)
+![Figure 10. Application Log After Adding OpenTelemetry Middleware](/blog/post-assets/2023-02-24/rails-log-after-installing-otel-middleware.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 10. Application Log After Adding OpenTelemetry Middleware</div>
 
 
@@ -1473,7 +1473,7 @@ span = MyAppTracer.start_span(span_name, with_parent: context, attributes: attri
 
 But, the interesting thing is when we look at the Figure 11, the first request with trace ID 691f94e (Figure 12) has more Span than second request (trace ID fbcc7d5, Figure 13). Also, we notice that in the third request it has 20 spans but before that, the Rails produce the DEALLOCATE span (Figure 14).
 
-![Figure 11. Jaeger UI With More Traces](/post-assets/2023-02-24/jaegerui-dashboard-with-more-traces.png)
+![Figure 11. Jaeger UI With More Traces](/blog/post-assets/2023-02-24/jaegerui-dashboard-with-more-traces.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 11. Jaeger UI With More Traces</div>
 
 Here's the timeline of the requests, and it's Trace ID:
@@ -1489,25 +1489,25 @@ Here's the timeline of the requests, and it's Trace ID:
 <details>
   <summary>Collection of JaegerUI</summary>
 
-![Figure 12. Jaeger UI Trace ID 691f94e426b88f0c96a1c38b7ecbceb9](/post-assets/2023-02-24/jaegerui-691f94e426b88f0c96a1c38b7ecbceb9.png)
+![Figure 12. Jaeger UI Trace ID 691f94e426b88f0c96a1c38b7ecbceb9](/blog/post-assets/2023-02-24/jaegerui-691f94e426b88f0c96a1c38b7ecbceb9.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 12. Jaeger UI Trace ID 691f94e426b88f0c96a1c38b7ecbceb9</div>
 
 
-![Figure 13. Jaeger UI Trace ID fbcc7d5139bcaf6cbe9755a8b95f4503](/post-assets/2023-02-24/jaegerui-fbcc7d5139bcaf6cbe9755a8b95f4503.png)
+![Figure 13. Jaeger UI Trace ID fbcc7d5139bcaf6cbe9755a8b95f4503](/blog/post-assets/2023-02-24/jaegerui-fbcc7d5139bcaf6cbe9755a8b95f4503.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 13. Jaeger UI Trace ID fbcc7d5139bcaf6cbe9755a8b95f4503</div>
 
 
-![Figure 14. Jaeger UI Trace ID 43bb5b582cb4c8e801dce2449e61aca6](/post-assets/2023-02-24/jaegerui-43bb5b582cb4c8e801dce2449e61aca6.png)
+![Figure 14. Jaeger UI Trace ID 43bb5b582cb4c8e801dce2449e61aca6](/blog/post-assets/2023-02-24/jaegerui-43bb5b582cb4c8e801dce2449e61aca6.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 14. Jaeger UI Trace ID 43bb5b582cb4c8e801dce2449e61aca6</div>
 
-![Figure 15. Jaeger UI Trace ID e8453e2284e26bf1a4bbf4b5ddeb7c8e](/post-assets/2023-02-24/jaegerui-e8453e2284e26bf1a4bbf4b5ddeb7c8e.png)
+![Figure 15. Jaeger UI Trace ID e8453e2284e26bf1a4bbf4b5ddeb7c8e](/blog/post-assets/2023-02-24/jaegerui-e8453e2284e26bf1a4bbf4b5ddeb7c8e.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 15. Jaeger UI Trace ID e8453e2284e26bf1a4bbf4b5ddeb7c8e</div>
 
-![Figure 16. Jaeger UI Trace ID 2d0666880d55e6e194cc6a89d02634f4](/post-assets/2023-02-24/jaegerui-2d0666880d55e6e194cc6a89d02634f4.png)
+![Figure 16. Jaeger UI Trace ID 2d0666880d55e6e194cc6a89d02634f4](/blog/post-assets/2023-02-24/jaegerui-2d0666880d55e6e194cc6a89d02634f4.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 16. Jaeger UI Trace ID 2d0666880d55e6e194cc6a89d02634f4</div>
 
 
-![Figure 17. Jaeger UI Trace ID d2fcb8edaa56c09fd1cf4efcddebe3b9](/post-assets/2023-02-24/jaegerui-d2fcb8edaa56c09fd1cf4efcddebe3b9.png)
+![Figure 17. Jaeger UI Trace ID d2fcb8edaa56c09fd1cf4efcddebe3b9](/blog/post-assets/2023-02-24/jaegerui-d2fcb8edaa56c09fd1cf4efcddebe3b9.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 17. Jaeger UI Trace ID d2fcb8edaa56c09fd1cf4efcddebe3b9</div>
 
 
@@ -1570,7 +1570,7 @@ curl -v http://localhost:3000/list-vouchers\?token\=eyJhbGciOiJIUzI1NiJ9.eyJ1c2V
 {"user":{"id":"c8c6991c-687e-44cc-8755-4743ef66d265","username":"jane","name":"Jane Kepiye Karepe To","created_at":"2023-03-02T09:15:51.346Z","updated_at":"2023-03-02T09:15:51.346Z"},"vouchers":[[{"voucher_code":"REGISTER_ANNIVERSARY","description":"will get 5% discount if user is a loyal users (already joined minimum 1 year)","terms_and_conditions":[{"discount":5,"min_registered_year":1,"registered_date_is_same":true,"registered_month_is_same":true,"name_prefix":""}]}],[{"voucher_code":"I_AM_JAN","description":"will get 1% discount if user have name prefix 'jan' because our app is launched at January!","terms_and_conditions":[{"discount":1,"min_registered_year":0,"registered_date_is_same":false,"registered_month_is_same":false,"name_prefix":""}]}]]}%    
 ```
 
-![Figure 18. Jaeger UI Trace ID a8f1b4a938dd800bef349037d25b9524 After Adding More Span](/post-assets/2023-02-24/jaegerui-a8f1b4a938dd800bef349037d25b9524.png)
+![Figure 18. Jaeger UI Trace ID a8f1b4a938dd800bef349037d25b9524 After Adding More Span](/blog/post-assets/2023-02-24/jaegerui-a8f1b4a938dd800bef349037d25b9524.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 18. Jaeger UI Trace ID a8f1b4a938dd800bef349037d25b9524 After Adding More Span</div>
 
 

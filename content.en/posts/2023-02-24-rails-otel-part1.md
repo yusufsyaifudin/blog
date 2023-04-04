@@ -156,13 +156,13 @@ docker compose up --build --force-recreate
 
 We will see our terminal similar like this:
 
-![Figure 1. Running Rails using Docker Compose](/post-assets/2023-02-24/run-rails-using-docker-compose.png)
+![Figure 1. Running Rails using Docker Compose](/blog/post-assets/2023-02-24/run-rails-using-docker-compose.png)
 <div style="text-align: center; margin-top: -40px; margin-bottom: 30px;">Figure 1. Running Rails using Docker Compose</div>
 
 
 Now, access your browser at `http://localhost:3000` it should look like this:
 
-![Figure 2. RoR homepage on fresh install](/post-assets/2023-02-24/rails-homepage-fresh-install.png)
+![Figure 2. RoR homepage on fresh install](/blog/post-assets/2023-02-24/rails-homepage-fresh-install.png)
 <div style="text-align: center; margin-top: -40px; margin-bottom: 30px;">Figure 2. RoR homepage on fresh install</div>
 
 
@@ -457,7 +457,7 @@ docker compose run --no-deps myapp rails db:migrate
 
 You will get the output similar like this:
 
-![Figure 3. Database Migration For Users Table](/post-assets/2023-02-24/rails-db-migrate-users.png)
+![Figure 3. Database Migration For Users Table](/blog/post-assets/2023-02-24/rails-db-migrate-users.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 3. Database Migration For Users Table</div>
 
 
@@ -757,7 +757,7 @@ token = JsonWebToken::encode({user_id: u.id})
 
 You will get the output something like this:
 
-![Figure 4. Insert user and generate JWT](/post-assets/2023-02-24/rails-console-insert-user-and-generate-jwt.png)
+![Figure 4. Insert user and generate JWT](/blog/post-assets/2023-02-24/rails-console-insert-user-and-generate-jwt.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 4. Insert user and generate JWT</div>
 
 In this example, you get the JWT token. Your generated token may be different, use your own token!
@@ -770,7 +770,7 @@ eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYzhjNjk5MWMtNjg3ZS00NGNjLTg3NTUtNDc0M2VmNjZ
 
 You can access the page [http://localhost:3000/list-vouchers?token={your-token}](http://localhost:3000/list-vouchers?token={your-token}) which will return the JSON similar as shown in figure 5.
 
-![Figure 5. Route /list-vouchers](/post-assets/2023-02-24/rails-route-list-vouchers.png)
+![Figure 5. Route /list-vouchers](/blog/post-assets/2023-02-24/rails-route-list-vouchers.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 5. Route /list-vouchers</div>
 
 
