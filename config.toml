@@ -20,10 +20,15 @@ startLevel = 1
 # See https://gohugo.io/content-management/multilingual/#translation-by-filename
 # And https://gohugo.io/content-management/multilingual/#translation-by-content-directory
 [languages]
+[languages.id]
+languageName = 'Indonesia'
+contentDir = 'content.id'
+weight = 1
+
 [languages.en]
 languageName = 'English'
 contentDir = 'content.en'
-weight = 1
+weight = 2
 
 
 [menu]
