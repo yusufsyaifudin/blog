@@ -1,3 +1,5 @@
 .idea
 .hugo_build.lock
 resources
+.DS_Store
+themes/.DS_Store

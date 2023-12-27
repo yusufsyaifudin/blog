@@ -65,6 +65,7 @@
 
   img {
     max-width: 100%;
+    height: auto;
   }
 
   code {
@@ -84,6 +85,10 @@
       padding: 0;
       background: none;
     }
+  }
+
+  p {
+    word-wrap: break-word;
   }
 
   blockquote {
@@ -129,6 +134,7 @@
   ul,
   ol {
     padding-inline-start: $padding-16 * 2;
+    word-wrap: break-word;
   }
 
   dl {
@@ -138,7 +144,7 @@
     }
 
     dd {
-      margin-inline-start: $padding-16;
+      margin-inline-start: 0;
       margin-bottom: $padding-16;
     }
   }

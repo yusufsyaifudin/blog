@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}" dir="{{ .Site.Language.LanguageDirection | default "ltr" }}">
-
+<html lang="{{ default .Site.Language.Lang .Site.LanguageCode  }}" dir="{{ default "ltr" .Site.Language.LanguageDirection }}">
 <head>
-  {{ hugo.Generator }}
   {{ partial "docs/html-head" . }}
   {{ partial "docs/inject/head" . }}
 </head>
-
-<body dir="{{ .Site.Language.LanguageDirection | default "ltr" }}">
+<body dir="{{ default "ltr" .Site.Language.LanguageDirection }}">
   <input type="checkbox" class="hidden toggle" id="menu-control" />
   <input type="checkbox" class="hidden toggle" id="toc-control" />
   <main class="container flex">
@@ -47,7 +44,6 @@
 
   {{ partial "docs/inject/body" . }}
 </body>
-
 </html>
 
 {{ define "menu" }}
@@ -77,7 +73,7 @@
 {{ end }}
 
 {{ define "main" }}
-  <article class="markdown">
+  <article class="markdown book-article">
     {{- .Content -}}
   </article>
 {{ end }}
