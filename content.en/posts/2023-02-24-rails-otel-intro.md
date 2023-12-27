@@ -82,7 +82,7 @@ To make Rails app logs easier to debug, developers can:
 
 ---
 
-In this part, I will not talk much about it. I will explain why it become problem in [the Part 2](/posts/2023-02-24-rails-otel-part2) with an example and then try to solve it. But, before jump to solution, I must prepare the clean Rails Application in [the Part 1](/posts/2023-02-24-rails-otel-part1/) as I haven't touch the Ruby on Rails for years.
+In this part, I will not talk much about it. I will explain why it become problem in [the Part 2]( {{ absLangURL "/posts/2023-02-24-rails-otel-part2" }} ) with an example and then try to solve it. But, before jump to solution, I must prepare the clean Rails Application in [the Part 1]( {{ absLangURL "/posts/2023-02-24-rails-otel-part1/" }} ) as I haven't touch the Ruby on Rails for years.
 
 Each section on each part will always include with the specific commit id. It will help you (and me in the future) to follow the tutorial, so we can reproduce by running `git checkout` and `docker compose up --build --force-recreate`, and we will get the similar result as shown in this tutorial.
 
@@ -92,7 +92,7 @@ OpenTelemetry came as a set of standard to make developer (and also ops) easier 
 
 
 
-![Figure 2. OpenTelemetry Ruby SDK Page](/blog/post-assets/2023-02-24/opentelemetry-ruby-sdk-page.png)
+![Figure 2. OpenTelemetry Ruby SDK Page]( {{ absLangURL "/blog/post-assets/2023-02-24/opentelemetry-ruby-sdk-page.png" }} )
 <div style="text-align: center; margin-bottom: 30px;">Figure 2. OpenTelemetry Ruby SDK Page</div>
 
 So, as the workaround to make standard logging that can be linked to the trace, we need to implement the [OTEP0114](https://github.com/open-telemetry/oteps/pull/114) which add these property in our existing log output:
@@ -111,14 +111,14 @@ So, as the workaround to make standard logging that can be linked to the trace, 
 
 In the OpenTelemetry page discussing [Trace Context in Legacy Formats](https://github.com/open-telemetry/opentelemetry-specification/blob/v1.18.0/specification/logs/README.md?plain=1#L474-L526), there no advice to use JSON format over the [Syslog RFC5424](https://www.rfc-editor.org/rfc/rfc5424) or other format. But in my opinion, using JSON as the log format output will make debugging more easier because it can be stored into NoSQL database and then query it. In result, by able to query the logs, we can group the logs based on `trace_id` which means that all logs with the same `trace_id` are produced by the one request journey from the client.
 
-![Figure 3. Trace Context in Legacy Formats](/blog/post-assets/2023-02-24/opentelemetry-trace-context-in-legacy-format.png)
+![Figure 3. Trace Context in Legacy Formats]( {{ absLangURL "/blog/post-assets/2023-02-24/opentelemetry-trace-context-in-legacy-format.png" }} )
 <div style="text-align: center; margin-bottom: 30px;">Figure 3. Trace Context in Legacy Formats</div>
 
 # Part 1: Preparing the Ruby on Rails Application
 
-If you are new to the Ruby on Rails, you can follow this [part 1](/posts/2023-02-24-rails-otel-part1/). Otherwise, go to [Part 2.](/posts/2023-02-24-rails-otel-part2/)
+If you are new to the Ruby on Rails, you can follow this [part 1]( {{ absLangURL "/posts/2023-02-24-rails-otel-part1/" }} ). Otherwise, go to [Part 2.]( {{ absLangURL "/posts/2023-02-24-rails-otel-part2/" }} )
 
 # Part 2: Improving Log Output
 
-Go to this link for the [Part 2.](/posts/2023-02-24-rails-otel-part2/)
+Go to this link for the [Part 2.]( {{ absLangURL "/posts/2023-02-24-rails-otel-part2/" }} )
 
