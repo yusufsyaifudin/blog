@@ -56,7 +56,7 @@ Supposed you have 16 line of log above, repeated multiple times because of high 
 
 The default Rails log output is hard to debug. I think it is not only me who feel that. Even ChatGPT tell me this when I asked **why rails app log hard to debug**:
 
-![Figure 1. ChatGPT's opinion of Rails log outputs]({{< absURL "/post-assets/2023-02-24/chatgpt-why-rails-app-log-hard-to-debug.png" >}})
+![Figure 1. ChatGPT's opinion of Rails log outputs](/blog/post-assets/2023-02-24/chatgpt-why-rails-app-log-hard-to-debug.png)
 <div style="text-align: center; margin-bottom: 30px;">Figure 1. ChatGPT's opinion of Rails log outputs</div>
 
 ---
@@ -82,7 +82,7 @@ To make Rails app logs easier to debug, developers can:
 
 ---
 
-In this part, I will not talk much about it. I will explain why it become problem in [the Part 2](/posts/2023-02-24-rails-otel-part2) with an example and then try to solve it. But, before jump to solution, I must prepare the clean Rails Application in [the Part 1](/posts/2023-02-24-rails-otel-part1/) as I haven't touch the Ruby on Rails for years.
+In this part, I will not talk much about it. I will explain why it become problem in [the Part 2](/blog/posts/2023-02-24-rails-otel-part2) with an example and then try to solve it. But, before jump to solution, I must prepare the clean Rails Application in [the Part 1](/blog/posts/2023-02-24-rails-otel-part1/) as I haven't touch the Ruby on Rails for years.
 
 Each section on each part will always include with the specific commit id. It will help you (and me in the future) to follow the tutorial, so we can reproduce by running `git checkout` and `docker compose up --build --force-recreate`, and we will get the similar result as shown in this tutorial.
 
@@ -116,9 +116,9 @@ In the OpenTelemetry page discussing [Trace Context in Legacy Formats](https://g
 
 # Part 1: Preparing the Ruby on Rails Application
 
-If you are new to the Ruby on Rails, you can follow this [part 1](/posts/2023-02-24-rails-otel-part1/). Otherwise, go to [Part 2.](/posts/2023-02-24-rails-otel-part2/)
+If you are new to the Ruby on Rails, you can follow this [part 1](/blog/posts/2023-02-24-rails-otel-part1/). Otherwise, go to [Part 2.](/blog/posts/2023-02-24-rails-otel-part2/)
 
 # Part 2: Improving Log Output
 
-Go to this link for the [Part 2.](/posts/2023-02-24-rails-otel-part2/)
+Go to this link for the [Part 2.](/blog/posts/2023-02-24-rails-otel-part2/)
 

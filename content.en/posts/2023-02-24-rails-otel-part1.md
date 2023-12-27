@@ -15,7 +15,7 @@ categories = [
 menu = "main"
 +++
 
-In this part, I will mainly focusing on preparing Rails application. If you already know about the Rails and want to only focusing on how to make the logs better, you can skip this part and [jump to Part 2](/posts/2023-02-24-rails-otel-part2/).
+In this part, I will mainly focusing on preparing Rails application. If you already know about the Rails and want to only focusing on how to make the logs better, you can skip this part and [jump to Part 2](/blog/posts/2023-02-24-rails-otel-part2/).
 
 # Prepare Rails Application
 
@@ -774,4 +774,4 @@ You can access the page [http://localhost:3000/list-vouchers?token={your-token}]
 <div style="text-align: center; margin-bottom: 30px;">Figure 5. Route /list-vouchers</div>
 
 
-Finally, we have a single route Rails application in this part. Then, we can go to [Part 2](/posts/2023-02-24-rails-otel-part2/) to learn what the problem we have if we use this code in high traffic and how to improve it.
+Finally, we have a single route Rails application in this part. Then, we can go to [Part 2](/blog/posts/2023-02-24-rails-otel-part2/) to learn what the problem we have if we use this code in high traffic and how to improve it.

@@ -15,7 +15,7 @@ categories = [
 menu = "main"
 +++
 
-In [previous part](/posts/2023-02-24-rails-otel-part1/) you already know how to setup a simple (really simple) Rails application with one route. In this part, I will focusing on how we improve the log printed by the standard Rails application.
+In [previous part](/blog/posts/2023-02-24-rails-otel-part1/) you already know how to setup a simple (really simple) Rails application with one route. In this part, I will focusing on how we improve the log printed by the standard Rails application.
 
 To recap, if you want to follow this article smoothly, you can use the code from previous part by cloning from my Github repository:
 
