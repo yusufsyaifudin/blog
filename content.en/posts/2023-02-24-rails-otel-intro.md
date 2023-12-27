@@ -56,7 +56,7 @@ Supposed you have 16 line of log above, repeated multiple times because of high 
 
 The default Rails log output is hard to debug. I think it is not only me who feel that. Even ChatGPT tell me this when I asked **why rails app log hard to debug**:
 
-![Figure 1. ChatGPT's opinion of Rails log outputs](/blog/post-assets/2023-02-24/chatgpt-why-rails-app-log-hard-to-debug.png)
+![Figure 1. ChatGPT's opinion of Rails log outputs]( {{< absLangURL "/post-assets/2023-02-24/chatgpt-why-rails-app-log-hard-to-debug.png" >}} )
 <div style="text-align: center; margin-bottom: 30px;">Figure 1. ChatGPT's opinion of Rails log outputs</div>
 
 ---
